@@ -1,60 +1,55 @@
+// Genera cuori nello sfondo
+function createBackgroundHearts() {
+    const container = document.getElementById('hearts-bg');
+    const heartSymbols = ['❤️', '💖', '💝', '💕'];
+    
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart-bg';
+        heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(heart);
+    }
+}
+createBackgroundHearts();
+
 const noBtn = document.getElementById('no-btn');
 const yesBtn = document.getElementById('yes-btn');
 const questionArea = document.getElementById('question-area');
 const celebration = document.getElementById('celebration');
 
-// Funzione per muovere il pulsante
-const moveNoButton = () => {
-    // Rendiamo la posizione absolute solo al primo tentativo di click
+// Tasto No che scappa
+const moveNo = () => {
     noBtn.style.position = 'fixed';
-    
-    // Calcoliamo limiti sicuri per lo schermo mobile
-    const padding = 50;
-    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
-
-    const randomX = Math.floor(Math.random() * (maxX - padding)) + padding;
-    const randomY = Math.floor(Math.random() * (maxY - padding)) + padding;
-
-    noBtn.style.left = `${randomX}px`;
-    noBtn.style.top = `${randomY}px`;
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
 };
 
-// Eventi per mobile (touchstart) e desktop (mouseover)
-noBtn.addEventListener('touchstart', (e) => {
-    e.preventDefault(); // Impedisce il click reale
-    moveNoButton();
-});
+noBtn.addEventListener('touchstart', (e) => { e.preventDefault(); moveNo(); });
+noBtn.addEventListener('mouseover', moveNo);
 
-noBtn.addEventListener('mouseover', moveNoButton);
-
-// Successo!
+// Azione al Sì
 yesBtn.addEventListener('click', () => {
     questionArea.classList.add('hidden');
     celebration.classList.remove('hidden');
     
-    // Esplosione di cuori!
-    const duration = 3 * 1000;
-    const end = Date.now() + duration;
+    // Pioggia di coriandoli infiniti!
+    var duration = 15 * 1000;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-    (function frame() {
-      confetti({
-        particleCount: 3,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: ['#ff4b6e', '#ff1493']
-      });
-      confetti({
-        particleCount: 3,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: ['#ff4b6e', '#ff1493']
-      });
+    function randomInRange(min, max) { return Math.random() * (max - min) + min; }
 
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    }());
+    var interval = setInterval(function() {
+        var timeLeft = animationEnd - Date.now();
+        if (timeLeft <= 0) return clearInterval(interval);
+        var particleCount = 50 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+    }, 250);
 });
