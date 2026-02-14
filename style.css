@@ -92,3 +92,40 @@ button {
 .hidden { display: none; }
 .zoom-in { animation: zoom 1s ease-out; }
 @keyframes zoom { from { transform: scale(0.5); } to { transform: scale(1); } }
+
+.date-planner {
+    text-align: left;
+    background: #fff5f7;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffccd5;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+#send-plan-btn {
+    width: 100%;
+    background: #25d366; /* Verde WhatsApp */
+    color: white;
+    margin-top: 10px;
+    font-size: 1rem;
+}

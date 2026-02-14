@@ -25,12 +25,37 @@
         </div>
 
         <div id="celebration" class="hidden">
-            <div class="photo-frame">
-                <img src="noi.png" alt="Noi" class="zoom-in">
-            </div>
-            <h1 class="success-title">Sapevo che avresti detto di SÌ! 🥰</h1>
-            <p>Preparati, stasera sarà speciale...</p>
+    <div class="photo-frame">
+        <img src="noi.png" alt="Noi" class="zoom-in">
+    </div>
+    <h1 class="success-title">Sapevo che avresti detto di SÌ! 🥰</h1>
+    <p>Ora aiutami a pianificare il nostro appuntamento perfetto:</p>
+
+    <div class="date-planner">
+        <div class="input-group">
+            <label>📍 Dove andiamo?</label>
+            <input type="text" id="date-place" placeholder="Es: Il nostro ristorante preferito...">
         </div>
+
+        <div class="input-group">
+            <label>🍕 Cosa mangiamo?</label>
+            <select id="date-food">
+                <option value="pizza">Pizza 🍕</option>
+                <option value="sushi">Sushi 🍣</option>
+                <option value="italiano">Cucina Italiana 🍝</option>
+                <option value="messicano">Messicano 🌮</option>
+                <option value="sorpresa">Fai tu, è una sorpresa! ✨</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>🎡 Attività post-cena?</label>
+            <input type="text" id="date-activity" placeholder="Es: Cinema, passeggiata, bowling...">
+        </div>
+
+        <button id="send-plan-btn">Invia il piano a [Tuo Nome] ❤️</button>
+    </div>
+</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

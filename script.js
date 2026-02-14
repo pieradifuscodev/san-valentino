@@ -53,3 +53,21 @@ yesBtn.addEventListener('click', () => {
         confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
     }, 250);
 });
+
+document.getElementById('send-plan-btn').addEventListener('click', () => {
+    const posto = document.getElementById('date-place').value;
+    const cibo = document.getElementById('date-food').value;
+    const attivita = document.getElementById('date-activity').value;
+
+    const messaggio = `Amore! Ecco il piano per il nostro appuntamento di San Valentino:%0A%0A` +
+                      `📍 Dove: ${posto}%0A` +
+                      `🍕 Cibo: ${cibo}%0A` +
+                      `🎡 Attività: ${attivita}%0A%0A` +
+                      `Non vedo l'ora! ❤️`;
+
+    // Sostituisci con il tuo numero di telefono (es: 393331234567)
+    const tuoNumero = "393928549838"; 
+    
+    // Apre WhatsApp con il messaggio pronto
+    window.open(`https://wa.me/${tuoNumero}?text=${messaggio}`, '_blank');
+});
