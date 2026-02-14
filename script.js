@@ -1,4 +1,3 @@
-// Genera cuori nello sfondo
 function createBackgroundHearts() {
     const container = document.getElementById('hearts-bg');
     const heartSymbols = ['❤️', '💖', '💝', '💕'];
@@ -33,12 +32,10 @@ const moveNo = () => {
 noBtn.addEventListener('touchstart', (e) => { e.preventDefault(); moveNo(); });
 noBtn.addEventListener('mouseover', moveNo);
 
-// Azione al Sì
 yesBtn.addEventListener('click', () => {
     questionArea.classList.add('hidden');
     celebration.classList.remove('hidden');
     
-    // Pioggia di coriandoli infiniti!
     var duration = 15 * 1000;
     var animationEnd = Date.now() + duration;
     var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -71,10 +68,8 @@ document.getElementById('send-plan-btn').addEventListener('click', () => {
         `*Ti aspetto!* ❤️`
     );
 
-    // SOSTITUISCI LE X CON IL TUO NUMERO (es. 393331234567)
     const tuoNumero = "393928549838"; 
     
-    // Usiamo l'URL universale di WhatsApp che funziona su tutti i dispositivi
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${tuoNumero}&text=${messaggio}`;
     
     window.location.href = whatsappUrl;
