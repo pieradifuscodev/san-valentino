@@ -69,6 +69,6 @@ document.getElementById('send-plan-btn').addEventListener('click', () => {
                       `🎵 Canzone: *${canzone}*%0A%0A` +
                       `*Ti aspetto!* ❤️`;
 
-    const tuoNumero = "39XXXXXXXXXX"; // METTI IL TUO NUMERO QUI (es. 393331234567)
+    const tuoNumero = "393928549838"; 
     window.open(`https://wa.me/${tuoNumero}?text=${messaggio}`, '_blank');
 });
