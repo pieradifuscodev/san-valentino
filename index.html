@@ -32,29 +32,41 @@
     <p>Ora aiutami a pianificare il nostro appuntamento perfetto:</p>
 
     <div class="date-planner">
-        <div class="input-group">
-            <label>📍 Dove andiamo?</label>
-            <input type="text" id="date-place" placeholder="Es: Il nostro ristorante preferito...">
-        </div>
-
-        <div class="input-group">
-            <label>🍕 Cosa mangiamo?</label>
-            <select id="date-food">
-                <option value="pizza">Pizza 🍕</option>
-                <option value="sushi">Sushi 🍣</option>
-                <option value="italiano">Cucina Italiana 🍝</option>
-                <option value="messicano">Messicano 🌮</option>
-                <option value="sorpresa">Fai tu, è una sorpresa! ✨</option>
-            </select>
-        </div>
-
-        <div class="input-group">
-            <label>🎡 Attività post-cena?</label>
-            <input type="text" id="date-activity" placeholder="Es: Cinema, passeggiata, bowling...">
-        </div>
-
-        <button id="send-plan-btn">Invia il piano a [Tuo Nome] ❤️</button>
+    <div class="input-card">
+        <span class="icon">📍</span>
+        <input type="text" id="date-place" placeholder="Dove mi porti?">
     </div>
+
+    <div class="input-card">
+        <span class="icon">🍱</span>
+        <select id="date-food">
+            <option value="" disabled selected>Cosa mangiamo?</option>
+            <option value="Sushi 🍣">Sushi Romantico 🍣</option>
+            <option value="Pizza 🍕">Pizza e Divano 🍕</option>
+            <option value="Pasta 🍝">Cena Stellata 🍝</option>
+            <option value="Sorpresa ✨">Sorprendimi tu... ✨</option>
+        </select>
+    </div>
+
+    <div class="input-card">
+        <span class="icon">💃</span>
+        <select id="date-dress">
+            <option value="" disabled selected>Dress Code?</option>
+            <option value="Elegante 👗">Elegante (Mettiti bella!) 👗</option>
+            <option value="Casual 👟">Casual e Comodi 👟</option>
+        </select>
+    </div>
+
+    <div class="slider-group">
+        <label>Livello di felicità: <span id="happy-val">100</span>%</label>
+        <input type="range" id="happy-scale" min="0" max="100" value="100">
+    </div>
+
+    <button id="send-plan-btn">
+        <span>Conferma Appuntamento</span>
+        <small>Ti arriverà un messaggio su WhatsApp</small>
+    </button>
+</div>
 </div>
     </div>
 
