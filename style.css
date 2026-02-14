@@ -162,3 +162,35 @@ button {
     opacity: 0.8;
     font-weight: 300;
 }
+
+/* Rende la card flessibile su ogni dispositivo */
+.card {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    max-height: 90vh; /* Evita che la card esca dallo schermo */
+    overflow-y: auto; /* Aggiunge lo scroll interno se il form è lungo */
+}
+
+/* Ridimensiona la foto per schermi piccoli */
+@media (max-height: 700px) {
+    .photo-frame {
+        width: 150px;
+        height: 150px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Sistema i pulsanti per il tocco mobile */
+button {
+    min-height: 50px; /* Area di tocco più facile per le dita */
+    width: 100%;
+}
+
+/* Assicura che gli input non zoomino su iPhone al click */
+input, select {
+    font-size: 16px !important; 
+}

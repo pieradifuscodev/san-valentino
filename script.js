@@ -61,14 +61,21 @@ document.getElementById('send-plan-btn').addEventListener('click', () => {
     const dress = document.getElementById('date-dress').value || "Non scelto";
     const canzone = document.getElementById('date-song').value || "Una a sorpresa 🎶";
 
-    const messaggio = `🌹 *DETTAGLI APPUNTAMENTO* 🌹%0A%0A` +
-                      `⏰ Quando: *${quando}*%0A` +
-                      `🍽️ Cibo: *${cibo}*%0A` +
-                      `🎡 Attività: *${attivita}*%0A` +
-                      `👗 Dress Code: *${dress}*%0A` +
-                      `🎵 Canzone: *${canzone}*%0A%0A` +
-                      `*Ti aspetto!* ❤️`;
+    const messaggio = encodeURIComponent(
+        `🌹 *DETTAGLI APPUNTAMENTO* 🌹\n\n` +
+        `⏰ Quando: ${quando}\n` +
+        `🍽️ Cibo: ${cibo}\n` +
+        `🎡 Attività: ${attivita}\n` +
+        `👗 Dress Code: ${dress}\n` +
+        `🎵 Canzone: ${canzone}\n\n` +
+        `*Ti aspetto!* ❤️`
+    );
 
+    // SOSTITUISCI LE X CON IL TUO NUMERO (es. 393331234567)
     const tuoNumero = "393928549838"; 
-    window.open(`https://wa.me/${tuoNumero}?text=${messaggio}`, '_blank');
+    
+    // Usiamo l'URL universale di WhatsApp che funziona su tutti i dispositivi
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${tuoNumero}&text=${messaggio}`;
+    
+    window.location.href = whatsappUrl;
 });
