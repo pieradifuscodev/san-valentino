@@ -33,38 +33,57 @@
 
     <div class="date-planner">
     <div class="input-card">
-        <span class="icon">📍</span>
-        <input type="text" id="date-place" placeholder="Dove mi porti?">
+        <span class="icon">⏰</span>
+        <select id="date-time">
+            <option value="" disabled selected>Quando usciamo?</option>
+            <option value="Mattina ☀️">Mattina (Colazione/Brunch) ☀️</option>
+            <option value="Pomeriggio 🌤️">Pomeriggio 🌤️</option>
+            <option value="Sera 🌙">Sera (Cena romantica) 🌙</option>
+        </select>
     </div>
 
     <div class="input-card">
-        <span class="icon">🍱</span>
+        <span class="icon">🍽️</span>
         <select id="date-food">
             <option value="" disabled selected>Cosa mangiamo?</option>
-            <option value="Sushi 🍣">Sushi Romantico 🍣</option>
-            <option value="Pizza 🍕">Pizza e Divano 🍕</option>
-            <option value="Pasta 🍝">Cena Stellata 🍝</option>
-            <option value="Sorpresa ✨">Sorprendimi tu... ✨</option>
+            <option value="Ristorante Vegetariano 🥗">Ristorante Vegetariano 🥗</option>
+            <option value="Pizza 🍕">Pizza 🍕</option>
+            <option value="Sushi 🍣">Sushi 🍣</option>
+            <option value="Panino 🍔">Un panino al volo 🍔</option>
+            <option value="Sorprendimi ✨">Sorprendimi! ✨</option>
         </select>
     </div>
 
     <div class="input-card">
-        <span class="icon">💃</span>
-        <select id="date-dress">
-            <option value="" disabled selected>Dress Code?</option>
-            <option value="Elegante 👗">Elegante (Mettiti bella!) 👗</option>
-            <option value="Casual 👟">Casual e Comodi 👟</option>
+        <span class="icon">🎡</span>
+        <select id="date-activity">
+            <option value="" disabled selected>Cosa facciamo?</option>
+            <option value="Cinema 🍿">Cinema e Popcorn 🍿</option>
+            <option value="Passeggiata 🚶‍♂️">Passeggiata sotto le stelle 🚶‍♂️</option>
+            <option value="Bowling/Arcade 🕹️">Sfida al Bowling/Arcade 🕹️</option>
+            <option value="Tramonto 🍷">Aperitivo al tramonto 🍷</option>
+            <option value="Divano e Netflix 🎬">Maratona Netflix e Relax 🎬</option>
         </select>
     </div>
 
-    <div class="slider-group">
-        <label>Livello di felicità: <span id="happy-val">100</span>%</label>
-        <input type="range" id="happy-scale" min="0" max="100" value="100">
+    <div class="input-card">
+        <span class="icon">👗</span>
+        <select id="date-dress">
+            <option value="" disabled selected>Come mi vesto?</option>
+            <option value="Elegante ✨">Elegante (Tiro a lucido) ✨</option>
+            <option value="Comoda/Sportiva 👟">Comoda e Sportiva 👟</option>
+            <option value="Casual Chic 🧥">Casual Chic 🧥</option>
+        </select>
+    </div>
+
+    <div class="input-card">
+        <span class="icon">🎵</span>
+        <input type="text" id="date-song" placeholder="La nostra canzone della serata?">
     </div>
 
     <button id="send-plan-btn">
-        <span>Conferma Appuntamento</span>
-        <small>Ti arriverà un messaggio su WhatsApp</small>
+        <span>Conferma Appuntamento ❤️</span>
+        <small>Manda un messaggio a Pier</small>
     </button>
 </div>
 </div>

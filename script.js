@@ -54,26 +54,21 @@ yesBtn.addEventListener('click', () => {
     }, 250);
 });
 
-// Aggiorna il valore dello slider in tempo reale
-const scale = document.getElementById('happy-scale');
-const valDisplay = document.getElementById('happy-val');
-scale.addEventListener('input', () => {
-    valDisplay.textContent = scale.value;
-});
-
 document.getElementById('send-plan-btn').addEventListener('click', () => {
-    const posto = document.getElementById('date-place').value || "Non specificato";
-    const cibo = document.getElementById('date-food').value || "Lo decideremo insieme";
-    const dress = document.getElementById('date-dress').value || "Libero";
-    const felicità = document.getElementById('happy-scale').value;
+    const quando = document.getElementById('date-time').value || "Non scelto";
+    const cibo = document.getElementById('date-food').value || "Non scelto";
+    const attivita = document.getElementById('date-activity').value || "Non scelto";
+    const dress = document.getElementById('date-dress').value || "Non scelto";
+    const canzone = document.getElementById('date-song').value || "Una a sorpresa 🎶";
 
-    const messaggio = `❤️ *CONFERMA APPUNTAMENTO* ❤️%0A%0A` +
-                      `📍 Dove: *${posto}*%0A` +
-                      `🍕 Cibo: *${cibo}*%0A` +
+    const messaggio = `🌹 *DETTAGLI APPUNTAMENTO* 🌹%0A%0A` +
+                      `⏰ Quando: *${quando}*%0A` +
+                      `🍽️ Cibo: *${cibo}*%0A` +
+                      `🎡 Attività: *${attivita}*%0A` +
                       `👗 Dress Code: *${dress}*%0A` +
-                      `😍 Livello Felicità: *${felicità}%25*%0A%0A` +
-                      `Sbrigati a venirmi a prendere! 🥰`;
+                      `🎵 Canzone: *${canzone}*%0A%0A` +
+                      `*Ti aspetto!* ❤️`;
 
-    const tuoNumero = "39XXXXXXXXXX"; // Inserisci il tuo numero qui!
+    const tuoNumero = "39XXXXXXXXXX"; // METTI IL TUO NUMERO QUI (es. 393331234567)
     window.open(`https://wa.me/${tuoNumero}?text=${messaggio}`, '_blank');
 });
