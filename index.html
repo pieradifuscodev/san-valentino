@@ -2,28 +2,32 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Per Te ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Per la mia Giulietta ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div id="quiz-section">
-            <img id="valentine-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG56Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/c76IJLufpNUMo/giphy.gif" alt="Cute Cat">
-            <h1>Will you be my Valentine? 🌹</h1>
-            <div class="buttons">
-                <button id="yes-btn">Sì! ❤️</button>
-                <button id="no-btn">No 💔</button>
+    <div id="main-card" class="card">
+        <div id="question-area">
+            <img id="gif-display" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG56Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/c76IJLufpNUMo/giphy.gif" alt="Cute GIF">
+            <h1>Will you be my Valentine?</h1>
+            <p>Ho una domanda importante per te...</p>
+            
+            <div class="btn-group">
+                <button id="yes-btn">SÌ! ❤️</button>
+                <button id="no-btn">No 🥺</button>
             </div>
         </div>
 
-        <div id="success-section" class="hidden">
-            <h1>Sapevo che avresti detto di sì! 🥰</h1>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG56Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiCi7C/giphy.gif">
-            <p>Preparati per il nostro appuntamento!</p>
+        <div id="celebration" class="hidden">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG56Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiCi7C/giphy.gif" alt="Happy GIF">
+            <h1 class="success-title">Sapevo che avresti detto di SÌ!</h1>
+            <p>Ci vediamo stasera! 🌹✨</p>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
