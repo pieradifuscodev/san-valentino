@@ -65,7 +65,7 @@ document.getElementById('send-plan-btn').addEventListener('click', () => {
         `🎡 Attività: ${attivita}\n` +
         `👗 Dress Code: ${dress}\n` +
         `🎵 Canzone: ${canzone}\n\n` +
-        `*Ti aspetto!* ❤️`
+        `*Sono gay!* ❤️`
     );
 
     const tuoNumero = "393928549838"; 
